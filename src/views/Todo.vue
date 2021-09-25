@@ -84,7 +84,7 @@
     methods: {
       addTask(){
         let newTask = {
-          id: Date.now,
+          id: Date.now(),
           title: this.newTaskTitle,
           done: false
         }
