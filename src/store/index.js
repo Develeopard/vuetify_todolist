@@ -5,11 +5,39 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    tasks: [
+      {
+        id:1,
+        title: 'Task One',
+        done: false,
+      },
+      {
+        id:2,
+        title: 'Task Two',
+        done: false,
+      },
+      {
+        id:3,
+        title: 'Task Three',
+        done: false,
+      },
+    ],
   },
   mutations: {
+    addTask(state, newTaskTitle){
+      let newTask = {
+        id: Date.now(),
+        title: newTaskTitle,
+        done: false
+      }
+      state.tasks.push(newTask)
+    },
   },
   actions: {
   },
-  modules: {
-  }
+  getters: {
+
+  },
+  // modules: {
+  // }
 })

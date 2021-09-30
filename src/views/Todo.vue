@@ -12,12 +12,12 @@
       clearable
     ></v-text-field>
     <v-list
-      v-if="tasks.length"
+      v-if="$store.state.tasks.length"
       class="pt-0"
       flat
     >
     <div
-        v-for="task in tasks" 
+        v-for="task in $store.state.tasks" 
         :key="task.id"
     >
       <v-list-item 
@@ -76,33 +76,12 @@
     data(){
       return{
         newTaskTitle: '',
-        tasks: [
-/*           {
-            id:1,
-            title: 'Task One',
-            done: false,
-          },
-          {
-            id:2,
-            title: 'Task Two',
-            done: false,
-          },
-          {
-            id:3,
-            title: 'Task Three',
-            done: false,
-          }, */
-        ],
+
       }
     },
     methods: {
       addTask(){
-        let newTask = {
-          id: Date.now(),
-          title: this.newTaskTitle,
-          done: false
-        }
-        this.tasks.push(newTask)
+        this.$store.commit('addTask', this.newTaskTitle)
         this.newTaskTitle = ''
       },
       doneTask(id){
