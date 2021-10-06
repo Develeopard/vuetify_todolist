@@ -44,6 +44,7 @@
       dark
       src="https://picsum.photos/1920/1080?random"
       prominent
+      height="170"
     >
       <template v-slot:img="{ props }">
         <v-img
@@ -60,7 +61,10 @@
         </v-row>
         
         <v-row>
-          <v-app-bar-title class="ml-4">Vuetify Todo List</v-app-bar-title>
+          <v-app-bar-title class="text-h4 ml-4">Vuetify Todo List</v-app-bar-title>
+        </v-row>
+        <v-row>
+          <LiveTimeDate />
         </v-row>
       </v-container>
 
@@ -75,6 +79,7 @@
 
 <script>
 import Search from '@/components/Tools/Search'
+import LiveTimeDate from '@/components/Tools/LiveTimeDate'
 import Snackbar from '@/components/Global/Snackbar'
 
   export default {
@@ -87,6 +92,7 @@ import Snackbar from '@/components/Global/Snackbar'
     }),
     components: {
       Search,
+      LiveTimeDate,
       Snackbar,
     },
   }
