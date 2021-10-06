@@ -2,20 +2,24 @@
   <v-app id="inspire">
     <v-navigation-drawer
       v-model="drawer"
+      :mobile-breakpoint="768"
       app
     >
-      <v-list-item>
-        <v-list-item-content>
-          <v-list-item-title class="text-h6">
-            Vuetify Todo List
-          </v-list-item-title>
-          <v-list-item-subtitle>
-            My First Vuetify Project
-          </v-list-item-subtitle>
-        </v-list-item-content>
-      </v-list-item>
-
-      <v-divider></v-divider>
+      <v-img
+        height="170"
+        src="https://picsum.photos/1920/1080?random"
+        gradient="to top right, rgba(19,84,122,.2), rgba(128,208,199,.5)"
+        class="pa-4 pt-7"
+      >
+      <v-avatar size="70" class="mb-2">
+        <img
+          src="https://cdn.vuetifyjs.com/images/john.jpg"
+          alt="John"
+        >
+      </v-avatar>
+      <div class="white--text text-subtitle-1 font-weight-bold">John Doe</div>
+      <div class="white--text text-subtitle-2">john__doe</div>
+      </v-img>
 
       <v-list
         dense
@@ -53,7 +57,7 @@
         ></v-img>
       </template>
 
-      <v-container class="pa-0">
+      <v-container class="header-container pa-0">
         <v-row>
           <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
           <v-spacer></v-spacer>
@@ -97,3 +101,9 @@ import Snackbar from '@/components/Global/Snackbar'
     },
   }
 </script>
+
+<style lang="scss">
+  .header-container{
+    max-width: none !important;
+  }
+</style>
