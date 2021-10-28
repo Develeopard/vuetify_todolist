@@ -82,6 +82,17 @@ import DialogDelete from '@/components/Todo/Dialogs/DialogDelete'
             }
 
         },
+        { 
+            title: 'Sort',
+            icon: 'mdi-drag-horizontal-variant',
+            click(){
+                if(this.$store.state.search){
+                    this.$store.commit('toggleSorting')
+                }else{
+                    this.$store.commit('showSnackbar', 'Sort disabled while searching tasks!')
+                }
+            }
+        },
       ],
     }),
     components:{

@@ -5,6 +5,7 @@
     :class="{ 'closed' : searchClosed && !$store.state.search}"
     @focus="searchClosed = false"
     @blur="searchClosed = true"
+    :disabled="$store.state.sorting"
     class="expanding-search mt-1"
     dense
     clearable

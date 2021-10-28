@@ -2,9 +2,9 @@
       <v-text-field
       v-model="newTaskTitle"
       @keyup.enter="addTask"
-      class="pa-3"
+      class="field-add-task pa-3"
       outlined
-      label="Add Task"
+      placeholder="Add Task"
       hide-details
       clearable
     >
